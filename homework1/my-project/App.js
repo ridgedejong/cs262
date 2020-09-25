@@ -13,12 +13,30 @@ export default function App() {
     })
   }
 
+  const submitHandler = (text) => {
+    if(text.length > 3) {
+      setTodos((prevTodos) => {
+        return [
+          {text: text, key: Math.random().toString()},
+          ...prevTodos
+        ]
+      })
+    } else {
+      Alert.alert('OOPS', 'Todos must be at least 3 chars long', [
+        {text: 'Understood', onPress: () => console.log('alert closed')}
+      ])
+    }
+  }
+
   return (
-    <TouchableWithoutFeedback>
+    <TouchableWithoutFeedback onPress={() => {
+      Keyboard.dismiss();
+      console.log('dismissed keyboard');
+    }}>
       <View>
         <Header />
         <View style={styles.content}>
-          <AddTodo />
+          <AddTodo submitHandler={submitHandler}/>
           <View style={styles.list}>
             <FlatList 
               data={todos}
