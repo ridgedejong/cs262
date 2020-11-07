@@ -12,9 +12,13 @@ It is deployed here:
 <https://hidden-basin-48937.herokuapp.com/>
 
 The active URLs are as follows:
+
 <https://hidden-basin-48937.herokuapp.com/playergame/>
+
 <https://hidden-basin-48937.herokuapp.com/playergame/1> (keys range from 1 to 8)
+
 <https://hidden-basin-48937.herokuapp.com/playergame/gameid/1> (gameIDs range from 1 to 3)
+
 <https://hidden-basin-48937.herokuapp.com/playergame/playerid/1> (playerIDs range from 1 to 3)
 
 All of these endpoints implement actions that are nullipotent because none of them cause a state change. 
