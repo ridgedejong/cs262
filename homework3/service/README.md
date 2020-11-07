@@ -1,22 +1,33 @@
-# CS 262 Monopoly Webservice
+# CS 262 Homework 3 Webservice
 
-This is the data service application for the [CS 262 sample Monopoly project](https://github.com/calvin-cs262-organization/monopoly-project) 
-and it is deployed here:
-          
-<https://cs262-monopoly-service.herokuapp.com/>
+This data service application is based on the [CS 262 sample Monopoly project](https://github.com/calvin-cs262-organization/monopoly-project) 
 
-It is based on the standard Heroku with Node.js tutorial.
+For this homework, the data service was upgraded to serve up data for a join query of the PlayerGame table. 
 
-<https://devcenter.heroku.com/articles/getting-started-with-nodejs>  
+The database is relational with the schema specified in `sql/homework3`,
+ and is hosted on [ElephantSQL](https://www.elephantsql.com/). The database user, password, and server
+ are stored as Heroku configuration variables rather than in this (public) repo.
 
-The database is relational with the schema specified in the `sql/` sub-directory,
- and is hosted on [ElephantSQL](https://www.elephantsql.com/). The database user
-and password are stored as Heroku configuration variables rather than in this (public) repo.
+It is deployed here:
+<https://hidden-basin-48937.herokuapp.com/>
 
-We implement this sample as a separate repo to simplify Heroku integration, but 
-for lab 9, you can simply submit your code under the standard `cs262/lab09` directory. 
-For the team project, configure your Heroku app to auto-deploy the code from the
-master/main branch of your
-service repo; do this by following the instructions under the &ldquo;Deploy&rdquo; 
-tab in your application in the Heroku dashboard.
+The active URLs are as follows:
+<https://hidden-basin-48937.herokuapp.com/playergame/>
+<https://hidden-basin-48937.herokuapp.com/playergame/1> (keys range from 1 to 8)
+<https://hidden-basin-48937.herokuapp.com/playergame/gameid/1> (gameIDs range from 1 to 3)
+<https://hidden-basin-48937.herokuapp.com/playergame/playerid/1> (playerIDs range from 1 to 3)
+
+All of these endpoints implement actions that are nullipotent because none of them cause a state change. 
+This also means none of them are idempotent because calling them once is no different than calling them multiple times.
+
+This service is RESTful because it:
+- is stateless (state kept on server/client)
+- uses HTTP to fetch the data
+- requests data through structured URLs
+- transfers data using JSON
+ 
+There is not impedance mismatch because Heroku takes the SQL data and converts it to JSON which can be easily used by the React Native (JavaScript) client.
+
+
+
  
