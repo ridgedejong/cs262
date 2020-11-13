@@ -1,7 +1,7 @@
-## Lab11
-### Static code analysis of WelcomeScreen.js using ESLint
+Lab11
+Static code analysis of WelcomeScreen.js using ESLint
 
-### Changes:
+Changes:
 - Formatted code using Shift+Alt+f
 - Added comments (JSDoc) throughout to help clarify
 - Got rid of import Button since Touchable Opacity used instead
