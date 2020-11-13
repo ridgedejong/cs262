@@ -1,7 +1,7 @@
-Lab11
-Static code analysis of WelcomeScreen.js using ESLint
+## Lab11
+### Static code analysis of WelcomeScreen.js using ESLint
 
-Changes:
+### Changes:
 - Formatted code using Shift+Alt+f
 - Added comments (JSDoc) throughout to help clarify
 - Got rid of import Button since Touchable Opacity used instead
@@ -9,4 +9,5 @@ Changes:
 - Fixed prop validation by adding property validation statement for endTour getting passed 
 - University's and Let's were replaced with University&apos;s and Let&apos;s to follow standards
 
-These changes can be found in campusCrawl-client repo in the format/welcome-screen branch. It has not been merged with master since other changes have been made and I do not want to deploy features to master that are still in development. 
+These changes can be found in campusCrawl-client repo in the format/welcome-screen branch. 
+It has not been merged with master since other changes have been made and I do not want to deploy features to master that are still in development. 
